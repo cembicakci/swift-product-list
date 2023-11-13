@@ -25,4 +25,8 @@ extension URL {
         #endif
     }
     
+    static var allCategories: URL {
+        URL(string: "/api/v1/categories", relativeTo: Self.default)!
+    }
+    
 }
