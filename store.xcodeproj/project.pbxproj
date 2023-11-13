@@ -15,6 +15,10 @@
 		E524845E2B029E6C00B929D8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E524845D2B029E6C00B929D8 /* Category.swift */; };
 		E52484602B029FBD00B929D8 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E524845F2B029FBD00B929D8 /* StoreModel.swift */; };
 		E52484632B02A0CF00B929D8 /* CategoryListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52484622B02A0CF00B929D8 /* CategoryListScreen.swift */; };
+		E52484652B02AC1500B929D8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52484642B02AC1500B929D8 /* Product.swift */; };
+		E52484672B02ADA300B929D8 /* ProductListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52484662B02ADA300B929D8 /* ProductListScreen.swift */; };
+		E524846A2B02B26100B929D8 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52484692B02B26100B929D8 /* ProductCell.swift */; };
+		E524846C2B02B39100B929D8 /* Locale+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E524846B2B02B39100B929D8 /* Locale+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		E524845D2B029E6C00B929D8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E524845F2B029FBD00B929D8 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		E52484622B02A0CF00B929D8 /* CategoryListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreen.swift; sourceTree = "<group>"; };
+		E52484642B02AC1500B929D8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E52484662B02ADA300B929D8 /* ProductListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListScreen.swift; sourceTree = "<group>"; };
+		E52484692B02B26100B929D8 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		E524846B2B02B39100B929D8 /* Locale+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,7 @@
 		E52484472B029CDB00B929D8 /* store */ = {
 			isa = PBXGroup;
 			children = (
+				E52484682B02B25500B929D8 /* Views */,
 				E52484612B02A0A800B929D8 /* Screens */,
 				E524845C2B029E6200B929D8 /* Models */,
 				E52484592B029DD100B929D8 /* Clients */,
@@ -82,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				E52484572B029D0900B929D8 /* URL+Extensions.swift */,
+				E524846B2B02B39100B929D8 /* Locale+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -99,6 +109,7 @@
 			children = (
 				E524845D2B029E6C00B929D8 /* Category.swift */,
 				E524845F2B029FBD00B929D8 /* StoreModel.swift */,
+				E52484642B02AC1500B929D8 /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,8 +118,17 @@
 			isa = PBXGroup;
 			children = (
 				E52484622B02A0CF00B929D8 /* CategoryListScreen.swift */,
+				E52484662B02ADA300B929D8 /* ProductListScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		E52484682B02B25500B929D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E52484692B02B26100B929D8 /* ProductCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +207,10 @@
 				E52484492B029CDB00B929D8 /* storeApp.swift in Sources */,
 				E52484632B02A0CF00B929D8 /* CategoryListScreen.swift in Sources */,
 				E52484602B029FBD00B929D8 /* StoreModel.swift in Sources */,
+				E524846A2B02B26100B929D8 /* ProductCell.swift in Sources */,
+				E52484652B02AC1500B929D8 /* Product.swift in Sources */,
+				E52484672B02ADA300B929D8 /* ProductListScreen.swift in Sources */,
+				E524846C2B02B39100B929D8 /* Locale+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

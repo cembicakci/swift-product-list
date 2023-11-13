@@ -13,23 +13,33 @@ struct CategoryListScreen: View {
     @State private var errorMessage = ""
     
     var body: some View {
-        List(storeModel.categories, id:\.id) { category in
-            HStack {
-                AsyncImage(url: category.image) { image in
-                    image.resizable()
-                        .frame(maxWidth: 100, maxHeight: 100)
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
-                } placeholder: {
-                    ProgressView()
+        NavigationStack {
+            VStack {
+                List(storeModel.categories, id:\.id) { category in
+                    NavigationLink  {
+                        ProductListScreen(category: category)
+                    } label: {
+                        HStack {
+                            AsyncImage(url: category.image) { image in
+                                image.resizable()
+                                    .frame(maxWidth: 100, maxHeight: 100)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            Text(category.name)
+                        }
+                    }
+                  
+                }.task {
+                    do {
+                        try await storeModel.fetchCategories()
+                    } catch {
+                        errorMessage = error.localizedDescription
+                    }
                 }
-                Text(category.name)
             }
-        }.task {
-            do {
-                try await storeModel.fetchCategories()
-            } catch {
-                errorMessage = error.localizedDescription
-            }
+            .navigationTitle("Store")
         }
     }
 }
