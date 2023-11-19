@@ -41,6 +41,7 @@ struct Resource<T: Codable> {
 class StoreHTTPClient {
     
     func load<T: Codable>(_ resource: Resource<T>) async throws -> T {
+        
         var request = URLRequest(url: resource.url)
         request.allHTTPHeaderFields = resource.headers
         request.httpMethod = resource.method.name
@@ -58,8 +59,8 @@ class StoreHTTPClient {
             
             request.url = url
             
-        case .post(_):
-            break
+        case .post(let data):
+            request.httpBody = data
             
         default:
             break
@@ -74,7 +75,7 @@ class StoreHTTPClient {
         let (data, response) = try await session.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse,
-                httpResponse.statusCode == 200 else { throw NetworkError.invalidResponse }
+                httpResponse.statusCode == 200 || httpResponse.statusCode == 201 else { throw NetworkError.invalidResponse }
                 
         guard let result = try? JSONDecoder().decode(T.self, from: data) else {
             throw NetworkError.decodingError

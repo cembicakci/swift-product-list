@@ -26,4 +26,12 @@ class StoreModel: ObservableObject {
         //products = try await client.getProductsByCategory(url: URL.productByCategory(categoryId))
     }
     
+    func saveProduct(_ createProduct: CreateProduct) async throws {
+        
+        let data = try JSONEncoder().encode(createProduct)
+        let product: Product = try await client.load(Resource(url: URL.saveProduct, method: .post(data)))
+        products.append(product)
+        
+    }
+    
 }

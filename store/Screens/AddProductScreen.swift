@@ -28,8 +28,15 @@ struct AddProductScreen: View {
               let imageURL = URL(string: imageUrl) else { return }
         
         let createProduct = CreateProduct(title: title, price: price, description: description, categoryId: category.id, images: [imageURL])
-        
-        //storeModel.saveProduct(createProduct)
+        Task {
+            do {
+                try await storeModel.saveProduct(createProduct)
+                dismiss()
+            } catch {
+                errorMessage = "Unable to save product"
+            }
+        }
+
     }
     
     var body: some View {
