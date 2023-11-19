@@ -12,7 +12,7 @@ class StoreModel: ObservableObject {
     
     let client = StoreHTTPClient()
     
-    @Published private(set) var categories: [Category] = []
+    @Published var categories: [Category] = []
     @Published private(set) var products: [Product] = []
     
     func fetchCategories() async throws {

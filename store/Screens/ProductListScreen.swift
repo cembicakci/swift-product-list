@@ -11,6 +11,7 @@ struct ProductListScreen: View {
     
     let category: Category
     
+    @State private var isPresented: Bool = false
     @EnvironmentObject private var storeModel: StoreModel
 
     var body: some View {
@@ -25,6 +26,16 @@ struct ProductListScreen: View {
             } catch {
                 print(error)
             }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Add Product") {
+                    isPresented = true
+                }
+            }
+        }
+        .sheet(isPresented: $isPresented) {
+            AddProductScreen()
         }
     }
 }
